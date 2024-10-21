@@ -3,7 +3,7 @@ services:
     runtime: python
     name: repthonq
     plan: free
-    branch: main
+    branch: master
     buildCommand: pip3 -U -r requirements.txt
     startCommand: python3 app.py & python3 main.py
     repo: https://github.com/Baqirub/M.git
