@@ -4,7 +4,7 @@ services:
     name: repthonq
     plan: free
     branch: master
-    buildCommand: pip3 -U -r requirements.txt
+    buildCommand: pip3 install -U -r requirements.txt
     startCommand: python3 app.py & python3 main.py
     repo: https://github.com/Baqirub/M.git
     region: frankfurt
