@@ -1,0 +1,32 @@
+services:
+  - type: web
+    runtime: python
+    name: repthonq
+    plan: free
+    branch: main
+    buildCommand: pip3 -U -r requirements.txt
+    startCommand: python3 app.py & python3 main.py
+    repo: https://github.com/Baqirub/M.git
+    region: frankfurt
+    envVars:
+      - key: API_ID
+        value: 13740761
+      - key: API_HASH
+        value: 4ce319a92c01fab2b02551af8d7f73a4
+      - key: ENVIRONMENT
+        value: ANYTHING
+      - key: BOT_TOKEN
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: OWNER_ID
+        value: 5502537272
+      - key: DATABASE_URL
+        fromDatabase:
+          name: postgresq
+          property: connectionString
+
+databases:
+  - name: postgresq
+    plan: free
+    region: frankfurt
